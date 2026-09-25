@@ -1,5 +1,5 @@
 [Rewrite]
-request if ${url} ~= /^https:\/\/dl-ct-hz\.imou\.com\/oms-online\/advertisement\/.*/i then reject_dict(200)
-request if ${url} ~= /^https:\/\/dl-ct-hz\.imou\.com\/lechange\/saas\/advertisement\/.*/i then reject_dict(200) | request.header.del("Cookie")
+request if ${url} ~= /^https:\/\/dl-ct-hz\.imou\.com:443\/oms-online\/advertisement\/.*/i then reject_dict(200)
+request if ${url} ~= /^https:\/\/dl-ct-hz\.imou\.com:443\/lechange\/saas\/advertisement\/.*/i then reject_dict(200) | request.header.del("Cookie")
 [MITM]
 hostname = dl-ct-hz.imou.com
