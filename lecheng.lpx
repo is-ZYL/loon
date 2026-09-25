@@ -1,0 +1,5 @@
+[Rewrite]
+request if ${url} ~= /^https:\/\/dl-ct-hz\.imou\.com:443\/oms-online\/advertisementPush\//i then reject_img(200)
+request if ${url} ~= /^https:\/\/dl-ct-hz\.imou\.com\/lechange\/saas\/advertisement\// then reject_img(200) | request.header.del("Cookie")
+[MITM]
+hostname = imou.com
